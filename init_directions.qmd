@@ -1,0 +1,84 @@
+---
+title: "Initial C2PA Directions: Mobile, Privacy, PKI, Long Term"
+date: 2024-12-11
+format:
+    revealjs:
+        preload-iframes: true
+        html-math-method: katex
+---
+
+# Overview
+
+C2PA on mobile phone is necessary for wide adoption
+
+Available apps (are closed or use server-side signing or self sign) and
+intrusive
+
+Long-term PKI is huge under-discussed problem
+
+## Feasible: C2PA mobile app
+
+System integrity check
+
+Hardware security module
+
+Camera/microphone
+
+---
+
+| Click                                             | Capture Cam                       | ProofMode                                   |
+| ------------------------------------------------- | --------------------------------- | ------------------------------------------- |
+| ❓Web3 company "Nodle"                            | ❓Web3 company "Numbers Protocol" | ✅Org making phone apps, "Guardian Project" |
+| ❌Proprietary                                     | ✅Capacitor WebView               | ✅Native Android/iOS                        |
+| ❓ContentSign w/ local privkey certified by Nodle | ❌Sign w/ same pubkey on demand   | ❌Self sign after capture                   |
+
+---
+
+| Click                                           | Capture Cam              | ProofMode                                          |
+| ----------------------------------------------- | ------------------------ | -------------------------------------------------- |
+| ❓Pass Verify by default but not if trust list  | ✅Pass Verify            | ❌Verify does not trust                            |
+| ❓Etherium blockchain                           | ❌Nodle's own blockchain | ❓Option to "register w/ a third party"            |
+| ❓Working w/ C2PA to allow pubkey on blockchain | ❌Reuse same key         | ❌Seems no privkey protection; little info in C2PA |
+
+## Existing apps
+
+All need Internet to sign C2PA
+
+None give granular control over privacy
+
+None have clear local signing w/ security
+
+None deal w/ long-term PKI
+
+**Want:**\
+Open-source, local signing, bank-app-level security, control metadata
+
+## Problems: PKI for local signing, long-term
+
+Who certify pubkey on each phone for each period?
+
+What happens when certificate expires?
+
+Reusing same key increases risk of compromising
+
+What happens when quantum computers break RSA & ECC?
+
+## Shoah Foundation & Starling Lab Framework
+
+Starling Lab claim to partner w/ Numbers Protocol
+
+All Verify links on website broken
+
+What happens to their blockchain if Numbers Protocol dies?
+
+## Proposal: open mobile C2PA app
+
+What are the difficulties? Why (it seems) no one done yet?
+
+Local privkey generation & signing
+
+Certify pubkey on each phone (How? Scalability?)
+
+Mechanisms to "freeze" signing time (How?)
+
+Build upon ProofMode?
