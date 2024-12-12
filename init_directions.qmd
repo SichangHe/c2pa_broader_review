@@ -57,7 +57,7 @@ Open-source, local signing, bank-app-level security, control metadata
 
 Who certify pubkey on each phone for each period?
 
-What happens when certificate expires?
+~~What happens when certificate expires?~~ Still verifies
 
 Reusing same key increases risk of compromising
 
@@ -82,3 +82,5 @@ Certify pubkey on each phone (How? Scalability?)
 Mechanisms to "freeze" signing time (How?)
 
 Build upon ProofMode?
+
+**Show C2PA on phone is easy for implementers**
