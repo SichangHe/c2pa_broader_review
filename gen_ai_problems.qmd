@@ -1,0 +1,132 @@
+---
+title: "GenAI: Problems Introduced and Countermeasures"
+format:
+    html:
+        html-math-method: katex
+    revealjs:
+        preload-iframes: true
+        html-math-method: katex
+        pdf: true
+bibliography: references.bib
+csl: acm-sig-proceedings-long-author-list.csl
+---
+
+## Deepfake
+
+Accessible, scalable and performant
+
+### Disinformation
+
+- Influence democratic process [@strickland2024election;
+    @collomosse2024authenticity; @rainey2023trait]
+- Mislead public perception and belief through
+    social media [@kharvi2024understanding; @collomosse2024authenticity;
+    @rainey2023trait]
+- Erode trust in media, democracy, authority, artwork, archival and
+    legal evidence; "truth decay" [@strickland2024election; @bushey2023ai;
+    @shoker2023confidence; @romero5031627deepfake]
+
+---
+
+**Countermeasures**
+
+- C2PA to attest content is real [@strickland2024election;
+    @collomosse2024authenticity; @balan2023ekila]
+    - 👍 Source and history [@kharvi2024understanding; @bushey2023ai;
+        @shoker2023confidence; @mo2023towards]
+        - Traceability and trust for not being tempered [@fotos2023ensuring]
+    - 👎 Can be spoofed by taking photo with photo [@vilesov2024solutions]
+    - 👎 Privacy: disclose sensitive information, but
+        mechanisms exist [@fotos2023ensuring]
+    - 👎 Can be stripped, is usually stripped [@collomosse2024authenticity]
+    - 👎 Need wide adoption [@collomosse2024authenticity; @balan2023ekila]
+    - 👎 Provenance does not imply trust [@mo2023towards]
+
+---
+
+- Preserve content on searchable blockchain [@kharvi2024understanding;
+    @romero5031627deepfake; @bureacua2024blockchain; @balan2023ekila;
+    @rainey2023trait]
+    - 👎 complex to implement; need wide adoption
+- Watermarking by content creator [@kharvi2024understanding]
+    - 👍 detect tempering, protect copyright
+- JPEG Trust: "trust report" for user to evaluate trust [@mo2023towards]
+    - 👍 Directly address trust
+    - 👎 Implementation details unclear; privacy
+
+---
+
+### Cybercrime
+
+- Video conference scam targeting business [@kharvi2024understanding;
+    @romero5031627deepfake]
+- Video promotion scam targeting individual [@kharvi2024understanding;
+    @romero5031627deepfake]
+    - Video romance scam [@romero5031627deepfake]
+- Personal attack: porn, fake speech,
+    cyberbullying [@kharvi2024understanding; @mo2023towards]
+    - Identity theft [@bushey2023ai; @romero5031627deepfake; @mo2023towards]
+
+**Countermeasures**
+
+- Cloud provider limit bad actor [@kharvi2024understanding]
+
+## Generation not for faking
+
+- Bias in generation [@bushey2023ai; @mo2023towards]
+- Intellectual property laundry [@bushey2023ai; @collomosse2024authenticity;
+    @balan2023ekila]
+- Not transparent or explainable, thus problem for regulation [@bushey2023ai]
+- Privacy and consent of training data [@bushey2023ai;
+    @collomosse2024authenticity; @balan2023ekila]
+
+---
+
+**Countermeasures**
+
+- Explainable AI (XAI) [@bushey2023ai; @romero5031627deepfake]
+- Bias mitigation and de-identification of training data [@bushey2023ai]
+- NFT of generation with authenticity metadata, ORA (Ownership, Rights,
+    Attribution) [@collomosse2024authenticity; @balan2023ekila]
+- Visual matching for generation [@balan2023ekila]
+
+## General countermeasures
+
+- Public awareness and education [@kharvi2024understanding;
+    @vilesov2024solutions]
+- Detection
+    - Human technique [@bushey2023ai]
+    - ML detection model, e.g., GAN
+        - 👍 Much more accurate than human [@bushey2023ai]
+        - 👍 Can be improved constantly [@vilesov2024solutions]
+        - 👎 Cannot outcompete generator [@kharvi2024understanding;
+            @romero5031627deepfake]
+    - Physiological signal analysis for video, e.g.,
+        blood flow [@romero5031627deepfake]
+    - Multi-modal detection [@romero5031627deepfake]
+
+---
+
+- Detection (cont.)
+    - Watermarking training data [@bushey2023ai; @collomosse2024authenticity]
+    - Watermarking generated content [@shoker2023confidence;
+        @romero5031627deepfake]
+        - 👎 Can be stripped, tempered or faked [@shoker2023confidence;
+            @collomosse2024authenticity]
+- Fingerprinting: search by perceived hash [@collomosse2024authenticity;
+    @balan2023ekila]
+    - 👍 Recover stripped metadata; some resilience to
+        tempering [@collomosse2024authenticity]
+    - 👎 Sensitive to editing [@collomosse2024authenticity]
+    - 👎 Need access to content database [@collomosse2024authenticity]
+    - 👎 Scalability and privacy concern [@collomosse2024authenticity]
+
+---
+
+- Similarity search (correlation) [@collomosse2024authenticity]
+    - 👎 May not reflect causality [@collomosse2024authenticity]
+- Organizational effort: partnership [@kharvi2024understanding]
+- Legal framework and global standard [@kharvi2024understanding;
+    @romero5031627deepfake]
+
+## References
