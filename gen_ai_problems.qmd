@@ -1,12 +1,12 @@
 ---
 title: "GenAI: Problems Introduced and Countermeasures"
 format:
-    html:
-        html-math-method: katex
     revealjs:
         preload-iframes: true
         html-math-method: katex
         pdf: true
+    html:
+        html-math-method: katex
 bibliography: references.bib
 csl: acm-sig-proceedings-long-author-list.csl
 ---
