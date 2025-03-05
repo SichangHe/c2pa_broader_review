@@ -1,0 +1,32 @@
+name: "Build Quarto and push to artifacts branch"
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Quarto
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Build Quarto
+        run: quarto render gen_ai_problems.qmd --to gfm
+      - name: Configure git
+        run: |
+          git config --global user.name "SichangHe"
+          git config --global user.email "sichanghe@users.noreply.github.com"
+          ls
+      - name: Push HTML if changed
+        run: |
+          git fetch
+          git switch artifacts
+          ls
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes."
+          else
+            git add .
+            git commit -m "Quarto rendering for $GITHUB_SHA"
+            git push -f
+          fi
